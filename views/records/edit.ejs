@@ -1,0 +1,126 @@
+<% layout("/layouts/boilerplate.ejs")%>
+
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br />
+      <br />
+
+      <h3>Edit Record </h3>
+
+      <form method="POST" action="/records/<%= record._id %>?_method=PUT" novalidate class="needs-validation mb-3">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              id="name"
+              name="record[name]"
+              value = <%= record.name.toUpperCase() %>
+              type="text"
+              required
+              class="form-control"
+            />
+            <div class="valid-feedback">Name looks good!</div>
+          </div>
+    
+          <div class="row">
+            <div class="mb-3 col-md-6 ">
+              <label for="age" class="form-label">Age</label>
+              <input
+                id="age"
+                class="form-control"
+                name="record[age]"
+                value = <%= record.age %>
+                type="number"
+                required
+              />
+              <div class="invalid-feedback">Please enter a valid age</div>
+            </div>
+    
+            <div class="mb-3 col-md-6 ">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" name="record[gender]" required>
+                  <option value=2 <%= record.gender == 2 ? 'selected' : '' %>>Male</option>
+                  <option value=1 <%= record.gender == 1 ? 'selected' : '' %> >Female</option>
+                </select>
+            </div>
+        </div>
+    
+            <div class="row">
+            <div class="mb-3  col-md-6">
+              <label for="weight" class="form-label">Weight</label>
+              <input
+                id="weight"
+                class="form-control"
+                name="record[weight]"
+                
+                type="number"
+                value=<%=record.weight%>
+                required
+              />
+              <div class="invalid-feedback">Please enter weight </div>
+            </div>
+            <div class="mb-3  col-md-6">
+                <label for="height" class="form-label">Height</label>
+                <input
+                  id="height"
+                  class="form-control"
+                  name="record[height]"
+                  value = <%= record.height %>
+                  type="number"
+                  required
+                />
+                <div class="invalid-feedback">Please enter height </div>
+              </div>
+        </div>
+    
+    
+    
+        <div class="row">
+            <div class="mb-3  col-md-6">
+              <label for="ap_hi" class="form-label">Systolic Blood Pressure</label>
+              <input
+                id="ap_hi"
+                class="form-control"
+                name="record[ap_hi]"
+                value = <%= record.ap_hi %>
+                type="number"
+                required
+              />
+    
+            </div>
+            <div class="mb-3  col-md-6">
+                <label for="ap_lo" class="form-label">Diastolic Blood Pressure</label>
+                <input
+                  id="ap_lo"
+                  class="form-control"
+                  name="record[ap_lo]"
+                  value = <%= record.ap_lo %>
+                  type="number"
+                  required
+                />
+                
+              </div>
+        </div>
+    
+        <div class="mb-3 ">
+            <label for="cholesterol" class="form-label">Cholesterol level</label>
+            <select class="form-select" name="record[cholesterol]" required>
+              <option value=1 <%= record.cholesterol == 1 ? 'selected' : '' %> >Normal</option>
+              <option value=2 <%= record.cholesterol == 2 ? 'selected' : '' %>>Above Normal</option>
+              <option value=3 <%= record.cholesterol == 3 ? 'selected' : '' %>>Well Above Normal</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="gluc" class="form-label">Glucose level</label>
+            <select class="form-select" name="record[gluc]" required>
+              <option value=1 <%= record.gluc == 1 ? 'selected' : '' %>>Normal</option>
+              <option value=2 <%= record.gluc == 2 ? 'selected' : '' %>>Above Normal</option>
+              <option value=3 <%= record.gluc == 3 ? 'selected' : '' %>>Well Above Normal</option>
+            </select>
+        </div>
+       
+        <button class="btn btn-dark edit-btn">Edit</button>
+      </form>
+    </div>
+  </div>
+</body>
