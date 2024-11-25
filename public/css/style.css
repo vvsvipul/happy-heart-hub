@@ -1,0 +1,143 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+
+.navbar
+{
+    height : 5rem;
+    background-color: white;
+}
+.navbar-h4{
+    font-weight: 900;
+    color: #E72929 !important;
+}
+
+footer{
+    margin-top: auto;
+    
+}
+.fa-compass{
+    color:#E72929;
+    font: size 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color:#222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links{
+    width:100%;
+}
+.f-info-social ,.f-info-brand{
+    width:100%;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+   
+}
+.f-info-social i {
+
+    font-size: 1.5rem;
+    margin-right: 1rem;
+   
+}
+.f-info{
+    text-align: center;
+    height:8rem;
+    background-color: #fd9c9c;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+
+}
+
+.record-link{
+    text-decoration: none !important;
+}
+
+.record-card{
+    padding-top: 1rem;
+    text-wrap: wrap;
+    border-color: #000000 !important;
+    margin-bottom: 2rem;
+    background-color: rgba(200, 199, 199, 0.668) !important;
+}
+
+.card-title{
+    text-align: center;
+}
+.card-subtitle{
+    text-align: center;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text{
+    font-weight: 400;
+}
+
+.record-card:hover{
+    background-color: rgb(197, 197, 197) !important;
+}
+
+.add-btn{
+    border: none !important;
+    background-color:#E72929 !important;
+}
+.edit-btn{
+    border: none !important;
+    background-color:#E72929 !important;
+}
+
+
+.btns{
+    display: flex;
+
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+    border: none !important;
+
+}
+
+.home-card {
+    width: 75%; /* Setting the width of the home card to 90% of its container */
+    margin: 0 auto; /* Centering the home card horizontally by setting left and right margins to auto */
+}
+
+
+.home-card .card-text {
+    padding: 1rem,1rem,1rem,1rem;
+    margin-right: auto;
+    overflow-wrap: break-word; /* Ensuring long words are broken to fit within the container */
+    word-wrap: break-word; /* Handling word wrapping for browsers that don't support overflow-wrap */
+}
+.home-a{
+    text-decoration: none !important;
+    
+    color: rgb(53, 53, 53);
+}
+
+.home-h5{
+    text-align: center;
+
+}
+.home-model-h3{
+    margin-left: auto;
+}
+

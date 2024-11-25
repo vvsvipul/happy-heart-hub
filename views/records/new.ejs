@@ -1,0 +1,122 @@
+<% layout("/layouts/boilerplate.ejs")%>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <br />
+    <br />
+    <h3>Create a New Record</h3>
+    <form method="POST" action="/records" novalidate class="needs-validation" >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          id="name"
+          name="record[name]"
+          placeholder="Enter name"
+          type="text"
+          required
+          class="form-control"
+        />
+        <div class="valid-feedback">Name looks good!</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-6 ">
+          <label for="age" class="form-label">Age</label>
+          <input
+            id="age"
+            class="form-control"
+            name="record[age]"
+            placeholder="Enter age in years"
+            type="number"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid age</div>
+        </div>
+
+        <div class="mb-3 col-md-6 ">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select" name="record[gender]" required>
+              <option value=2>Male</option>
+              <option value=1>Female</option>
+            </select>
+        </div>
+    </div>
+
+        <div class="row">
+        <div class="mb-3  col-md-6">
+          <label for="weight" class="form-label">Weight</label>
+          <input
+            id="weight"
+            class="form-control"
+            name="record[weight]"
+            placeholder="Enter weight in kg"
+            type="number"
+            required
+          />
+          <div class="invalid-feedback">Please enter weight </div>
+        </div>
+        <div class="mb-3  col-md-6">
+            <label for="height" class="form-label">Height</label>
+            <input
+              id="height"
+              class="form-control"
+              name="record[height]"
+              placeholder="Enter height in cm"
+              type="number"
+              required
+            />
+            <div class="invalid-feedback">Please enter height </div>
+          </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="mb-3  col-md-6">
+          <label for="ap_hi" class="form-label">Systolic Blood Pressure</label>
+          <input
+            id="ap_hi"
+            class="form-control"
+            name="record[ap_hi]"
+            type="number"
+            required
+          />
+
+        </div>
+        <div class="mb-3  col-md-6">
+            <label for="ap_lo" class="form-label">Diastolic Blood Pressure</label>
+            <input
+              id="ap_lo"
+              class="form-control"
+              name="record[ap_lo]"
+              type="number"
+              required
+            />
+            
+          </div>
+    </div>
+
+    <div class="mb-3 ">
+        <label for="cholesterol" class="form-label">Cholesterol level</label>
+        <select class="form-select" name="record[cholesterol]" required>
+          <option value=1>Normal</option>
+          <option value=2>Above Normal</option>
+          <option value=3>Well Above Normal</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="gluc" class="form-label">Glucose level</label>
+        <select class="form-select" name="record[gluc]" required>
+          <option value=1>Normal</option>
+          <option value=2>Above Normal</option>
+          <option value=3>Well Above Normal</option>
+        </select>
+    </div>
+
+      <button class="btn btn-dark add-btn">Predict</button>
+      <br />
+      <br />
+    </form>
+  </div>
+</div>
+

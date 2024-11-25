@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+
+    <h3 class="mt-4">RECORDS</h3>
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-4">
+    <% for(let record of allRecords) { %>
+    <a href="/records/<%=record.id%>" class="record-link">
+        <div class="card record-card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Name : <%=record.name.toUpperCase()%></h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Prediction : <%=Math.ceil(record.prediction*100)%></h6>
+              <p class="card-text">
+                <ul>
+                    <li>Age : <%=record.age%> </li>
+                    <li>Weight : <%=record.weight%></li>
+                    <li>Height : <%=record.height%></li>
+                </ul>
+              </p>
+            </div>
+          </div>
+    </a>
+    <% } %>
+  </div>
+
+
+  <div class="alert alert-danger" role="alert">
+    <b>WARNING:</b> This model is intended for informational purposes only and should not be used for medical diagnosis. It has limitations and cannot replace professional medical advice. Always consult with a doctor for any questions or concerns about your heart health.<br> <i>This model's performance has not been validated for <b>individuals younger than 30 or older than 64, weight below 10 kg or exceeding 200 kg,  height below 55 cm or exceeding 250 cm.</b></i>
+  </div>
+</body>
+
+
+
+
+<script>
+
+let taxSwitch = document.getElementById("flexSwitchCheckDefault")
+taxSwitch.addEventListener("click",()=>{
+  let taxInfo = document.getElementsByClassName("tax-info");
+  for(info of taxInfo)
+  {
+    if(info.style.display!="inline"){
+    info.style.display="inline";
+    }else{
+      info.style.display="none";
+    }
+  }
+})
+
+</script>

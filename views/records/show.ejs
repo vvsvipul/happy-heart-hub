@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate.ejs")%>
+
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+        <H3>DETAIL: </H3>
+        <BR>
+      <h5>NAME : <%= record.name.toUpperCase() %></h5>
+      <h6>PREDICTION : <%= Math.ceil(record.prediction*100)  %></h6>
+</div>
+      <div class="card col-6 offset-2 show-card " >
+        <div class="card-body ">
+          <p class="card-text">Docter : <i>DR.<%= record.owner.username.toUpperCase() %></i></p>
+          <p class="card-text">Age : <i><%= record.age %></i></p>
+          <p class="card-text">Height : <i><%= record.height %></i></p>
+          <p class="card-text">Weight : <i><%= record.weight %></i></p>
+          <p class="card-text">Gender : <i><%= record.gender == 1 ? 'Female' : 'Male' %></i></p>
+          <p class="card-text">Systolic  Blood Pressure : <i><%= record.ap_hi %></i></p>
+          <p class="card-text">Diastolic Blood Pressure : <i><%= record.ap_lo %></i></p>
+          <p class="card-text">Cholesterol level : <i><%= record.cholesterol%></i></p>
+          <p class="card-text">Glucose level : <i><%= record.gluc%></i></p>
+        </div>
+      </div>
+
+      <% if(currUser && currUser._id.equals(record.owner._id)) {%>
+      <div class="btns mt-4 mb-4">
+        <a href="/records/<%= record._id%>/edit" class="btn btn-dark  offset-4 edit-btn">Edit</a>
+     
+        <form method="POST" action="/records/<%=record._id%>?_method=DELETE">
+          <button class="btn btn-dark offset-4">Delete</button>
+        </form>
+      </div>
+   <%}%>
+  </div>
+
