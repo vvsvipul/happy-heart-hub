@@ -18,14 +18,7 @@ We’re not just running tests; we’re paving the way for **scalable, high-avai
    - **Accuracy** ✅  
    - **Throughput** 🔄  
    - **Latency** ⏱️  
-
-3. ⚙️ **Compare Titans**  
-   Perform a head-to-head comparison of **Kubernetes** and **Docker Swarm** to evaluate:  
-   - **Scalability** 📈  
-   - **Resilience** 💪  
-   - **Suitability** for healthcare applications under heavy load 🏋️‍♂️  
-
-4. 🛠️ **Deliver Insights**  
+3. 🛠️ **Deliver Insights**  
    Provide actionable findings on which orchestration tool is best for managing ML and AI workloads.  
 
 ---
@@ -36,18 +29,14 @@ We’re not just running tests; we’re paving the way for **scalable, high-avai
 - Cardiovascular risk prediction is powered by ML algorithms trained on real-world data.  
 - Generative AI enhances the system by handling auxiliary tasks, e.g., personalized recommendations.
   ![image](https://github.com/user-attachments/assets/e9aeb116-b0cd-47f8-950d-6d7c7ca7c3d3)
- 
-### **2. Orchestration Tools 🤖**  
-- **Kubernetes** and **Docker Swarm** are used to deploy, scale, and manage the models in real time.  
-- The focus is on high availability and fault tolerance.  
 
-### **3. Performance Testing 🧪**  
+### **2. Performance Testing 🧪**  
 - **JMeter** simulates diverse real-world load scenarios:  
   - Light, medium, and heavy traffic 🚦  
   - Sudden spikes in request rates 🌊  
   - Long-term steady-state operations 🕒  
 
-### **4. Comparative Analysis ⚔️**  
+### **3. Comparative Analysis ⚔️**  
 - Metrics like latency, throughput, and resource utilization are collected for **Kubernetes vs. Docker Swarm**.  
 - Detailed insights help determine the best fit for healthcare AI applications.  
 
