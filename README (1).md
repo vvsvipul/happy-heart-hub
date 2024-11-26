@@ -36,10 +36,6 @@ We’re not just running tests; we’re paving the way for **scalable, high-avai
   - Sudden spikes in request rates 🌊  
   - Long-term steady-state operations 🕒  
 
-### **3. Comparative Analysis ⚔️**  
-- Metrics like latency, throughput, and resource utilization are collected for **Kubernetes vs. Docker Swarm**.  
-- Detailed insights help determine the best fit for healthcare AI applications.  
-
 ---
 
 ## 🔧 **Tech Stack**  
@@ -48,7 +44,6 @@ We’re not just running tests; we’re paving the way for **scalable, high-avai
 |-----------------------|-------------------------|  
 | **Machine Learning**  | Python  🐍   |  
 | **Generative AI**     | Hugging Face 🤗  |  
-| **Orchestration**     | Kubernetes, Docker Swarm ⚙️ |  
 | **Performance Testing**| Apache JMeter, Sentry🏗️         |  
 | **Deployment**        | AWS ☁️             |  
 
@@ -57,7 +52,6 @@ We’re not just running tests; we’re paving the way for **scalable, high-avai
 ## 📚 **How to Run the Project**  
 
 ### 🛠️ **Prerequisites**  
-- Docker 🐳 and Kubernetes 🧩 installed  
 - Python 3.9+  
 - JMeter setup  
 
@@ -73,28 +67,14 @@ We’re not just running tests; we’re paving the way for **scalable, high-avai
    Install the required dependencies:  
    ```bash  
    pip install -r requirements.txt  
-   ```  
+   ```     ```  
 
-3. **Deploy Models** 🖥️  
-   - Use Kubernetes:  
-     ```bash  
-     kubectl apply -f k8s-deployment.yaml  
-     ```  
-   - Or Docker Swarm:  
-     ```bash  
-     docker stack deploy -c docker-compose.yml happy-heart  
-     ```  
-
-4. **Run JMeter Tests** 📊  
+3. **Run JMeter Tests** 📊  
    Load test configurations and execute:  
    ```bash  
    jmeter -n -t load_test.jmx -l results.jtl  
    ```  
 
-5. **Analyze Results** 📈  
-   Use visualizations to compare throughput, latency, and resilience!  
-
----
 
 ## 🌟 **Why It Matters**  
 
