@@ -34,7 +34,7 @@ kind: Deployment
 metadata:
   name: nodejs
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nodejs
@@ -73,7 +73,7 @@ kind: Deployment
 metadata:
   name: knn
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: knn
