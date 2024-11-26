@@ -13,20 +13,19 @@ spec:
         app: mongodb
     spec:
       containers:
-      - name: mongodb
-        image: mongo
-        ports:
-        - containerPort: 27017
+        - name: mongodb
+          image: mongo
+          ports:
+            - containerPort: 27017
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mongodb
 spec:
-  type: ClusterIP
   ports:
-  - port: 27017
-    targetPort: 27017
+    - port: 27017
+      targetPort: 27017
   selector:
     app: mongodb
 ---
@@ -45,19 +44,16 @@ spec:
         app: nodejs
     spec:
       containers:
-      - name: nodejs
-        image: yashcse21/major1:node_app
-        ports:
-        - containerPort: 8080
-        env:
-        - name: DB
-          value: "mongodb://mongodb:27017"
-        - name: SECRET
-          value: "mysecretisthis"
-      initContainers:
-      - name: wait-for-mongodb
-        image: busybox
-        command: ['sh', '-c', 'until nc -z mongodb 27017; do echo waiting for mongodb; sleep 2; done;']
+        - name: nodejs
+          image: yashcse21/major10:node_app1
+          env:
+            - name: DB
+              value: "mongodb://mongodb:27017"
+            - name: SECRET
+              value: "mysecretisthis"
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
@@ -66,9 +62,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 8080
-    targetPort: 8080
-    nodePort: 30080
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30221
   selector:
     app: nodejs
 ---
@@ -87,10 +83,10 @@ spec:
         app: knn
     spec:
       containers:
-      - name: knn
-        image: yashcse21/major1:knn
-        ports:
-        - containerPort: 3000
+        - name: knn
+          image: yashcse21/major10:knn
+          ports:
+            - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
@@ -99,34 +95,41 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 3000
-    targetPort: 3000
-    nodePort: 30030
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30300
   selector:
     app: knn
 ---
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: nodejs-hpa
+  name: gen-ai
 spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: nodejs
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gen-ai
+  template:
+    metadata:
+      labels:
+        app: gen-ai
+    spec:
+      containers:
+        - name: gen-ai
+          image: yashcse21/major10:gen_ai
+          ports:
+            - containerPort: 8000
 ---
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
+apiVersion: v1
+kind: Service
 metadata:
-  name: knn-hpa
+  name: gen-ai
 spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: knn
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
+  type: NodePort
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30800
+  selector:
+    app: gen-ai
