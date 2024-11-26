@@ -1,4 +1,4 @@
-# 🌟 Welcome to **Happy Heart Hub** ❤️🚀  
+# **Happy Heart Hub** ❤️🚀  
 
 The **Happy Heart Hub** is a groundbreaking project that puts machine learning (ML) and generative AI models through their paces under high-load conditions! We’re on a mission to find out which orchestration tool—**Kubernetes** or **Docker Swarm**—shines brightest when managing real-time, resource-intensive health applications. 🩺💻  
 
