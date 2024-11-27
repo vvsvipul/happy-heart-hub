@@ -8,7 +8,8 @@ services:
       - "4000:27017"
 
   nodejs:
-    image: yashcse21/devops:backend
+    build:
+      context: ./backend
     container_name: nodejs
     environment:
       - DB=mongodb://mongodb:27017
@@ -21,13 +22,15 @@ services:
       - gen_ai
 
   knn:
-    image: yashcse21/devops:knn
+    build:
+      context: ./knn
     container_name: knn
     ports:
       - "3005:3000"
 
   gen_ai:
-    image: yashcse21/devops:gen_ai
+    build:
+      context: ./genrative_ai
     container_name: gen_ai
     ports:
       - "8005:8000"
